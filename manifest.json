@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.peterholko.parent-browsing",
+  "name": "Browsing history",
+  "version": "0.1.0",
+  "author": "Peter Holko",
+  "description": "Browsing history for PR9750 child installations",
+  "kinds": [
+    "panel",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "Panel.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "defaultSection": "right"
+  }
+}
