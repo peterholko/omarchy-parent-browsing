@@ -2,7 +2,7 @@
 
 Omarchy Quattro plugin for a child installation configured by [PR9750](https://github.com/omacom/omarchy/pull/9750). It uses the existing OS parent password through polkit. No password is stored in the plugin.
 
-This repository contains the user interface. It requires the separately installed `omarchy-parent-addons-browsing` and `omarchy-parent-addons-core` packages. The [current backend release](https://github.com/peterholko/omarchy-parent-addons/releases/tag/v0.1.1) includes matching package-based UI copies. Plugin v0.1.1 also works with the v0.1.0 backend; that backend does not need to be rebuilt for the panel visibility fix. The backend does not depend on the Omarchy Kids distribution or replace Omarchy. Linux installation and authentication checks are still pending; see the [validation record](https://github.com/peterholko/omarchy-parent-addons/blob/v0.1.1/VALIDATION.md).
+This repository contains the user interface. It requires the separately installed `omarchy-parent-addons-browsing` and `omarchy-parent-addons-core` packages. The [current backend release](https://github.com/peterholko/omarchy-parent-addons/releases/tag/v0.1.2) includes matching package-based UI copies. Plugin v0.1.1 also works with the v0.1.0 backend; that backend does not need to be rebuilt for the panel visibility fix. The backend does not depend on the Omarchy Kids distribution or replace Omarchy. Linux installation and authentication checks are still pending; see the [validation record](https://github.com/peterholko/omarchy-parent-addons/blob/v0.1.2/VALIDATION.md).
 
 ## Install
 
@@ -39,6 +39,8 @@ A plugin update cannot upgrade its root-owned backend. Package-based UI copies u
 
 Version 0.1.1 fixes the bar button opening an invisible window. For existing Git installs with the v0.1.0 backend, the two commands above are sufficient for this fix.
 
+The DNS domain-blocking changes in v0.1.2 require the [backend upgrade](https://github.com/peterholko/omarchy-parent-addons#upgrade). Updating a shell plugin alone cannot change DNS behavior. Existing v0.1.1 interfaces can use the fixed v0.1.2 backend.
+
 ## Disable and remove
 
 Disable the backend with `omarchy parent browsing off --user "$(id -un)"`. From the backend source directory, run `./remove browsing` to restore owned integration files and remove the backend package. Remove this interface with:
@@ -51,6 +53,6 @@ Logs and settings are retained. Removing only the shell plugin leaves the backen
 
 ## Source
 
-This interface is generated from the [shared source](https://github.com/peterholko/omarchy-parent-addons/tree/v0.1.1/ui) by `packaging/export.py`. Changes should be made there and exported to this repository. Both exported plugin roots pass PR9750's plugin validator. Portable Qt tests use inert Quickshell transport stubs; real Linux runtime validation remains pending.
+This interface is generated from the [shared source](https://github.com/peterholko/omarchy-parent-addons/tree/v0.1.2/ui) by `packaging/export.py`. Changes should be made there and exported to this repository. Both exported plugin roots pass PR9750's plugin validator. Portable Qt tests use inert Quickshell transport stubs; real Linux runtime validation remains pending.
 
 MIT. Extracted from [Omarchy Kids](https://github.com/peterholko/omarchy-kids) with standalone PR9750 adapters. [SOURCE.json](SOURCE.json) records the original revision and provenance; [LICENSE](LICENSE) retains the original license notice.
